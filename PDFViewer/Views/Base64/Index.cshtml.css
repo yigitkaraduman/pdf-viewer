@@ -1,0 +1,50 @@
+﻿.main-container {
+    display:flex;
+    justify-content:flex-start;
+    margin-top:1.5rem;
+}
+
+.base64{
+    width:50%;
+    padding-right:1.5rem;
+}
+
+.svg{
+    width:50%;
+    padding-left:1.5rem;
+    border-left:groove;
+}
+
+.controller1{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+/*.form-floating{
+    float:left;
+}*/
+
+/*#convertBtn{
+    float:right;
+}*/
+
+input::-webkit-file-upload-button {
+   /* position: absolute;*/
+    padding: 10px 20px;
+    background-color: peru;
+    border-radius: 1px;
+    color: white;
+    text-transform: uppercase;
+    transition: 100ms ease-out;
+    cursor: pointer;
+}
+
+input::-webkit-file-upload-button:hover {
+    background-color: #bd6e1f;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)
+}
+
+.alert {
+    display: none;
+}

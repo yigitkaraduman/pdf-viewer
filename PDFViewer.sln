@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFViewer", "PDFViewer\PDFViewer.csproj", "{01E9C71D-BC53-4621-95D0-4122E65C9AFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dummyAPI", "..\dummyAPI\dummyAPI.csproj", "{E43FEE7F-73BA-45DF-968E-9C986F2B42A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01E9C71D-BC53-4621-95D0-4122E65C9AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E9C71D-BC53-4621-95D0-4122E65C9AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E9C71D-BC53-4621-95D0-4122E65C9AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E9C71D-BC53-4621-95D0-4122E65C9AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43FEE7F-73BA-45DF-968E-9C986F2B42A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43FEE7F-73BA-45DF-968E-9C986F2B42A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43FEE7F-73BA-45DF-968E-9C986F2B42A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43FEE7F-73BA-45DF-968E-9C986F2B42A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06E53AF1-4722-41D4-8160-1CE16578D147}
+	EndGlobalSection
+EndGlobal

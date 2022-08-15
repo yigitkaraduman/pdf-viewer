@@ -1,0 +1,104 @@
+﻿@model SvgPrintModel
+
+<div class="main-container">
+    <div class="base64">
+        <h2>Convert Base64</h2>
+
+        <div class="controller1">
+            <div class="form-floating">
+                <input type="file" id="file-selector" accept=".txt">
+            </div>
+        
+            <button type="button" class="btn btn-primary" id="convertBtn" onclick="convertBase64()"><i class="bi bi-arrow-clockwise"></i> Convert to PDF</button>
+        </div>
+
+        <div id="alerts"></div>
+   
+    </div>
+    <div class="svg">
+        <h2>Call Printing Service</h2>
+        <button type="button" class="btn btn-primary" style="float:right" data-bs-toggle="modal" data-bs-target="#accessKeyModal"><i class="bi bi-gear-fill">  </i>Settings</button>
+        
+        <partial name="_AccessKey" ></partial>
+
+        <div class="print-svg-pdf" style="margin-top:3rem">
+            <form method="post" asp-action="PrintPDF">
+                <div class="mb-3">
+                <label asp-for="DocumentTypeCode"></label>
+                <input asp-for="DocumentTypeCode" class="form-control"/>
+                 <span asp-validation-for="DocumentTypeCode" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="PolicyNo"></label>
+                <input asp-for="PolicyNo" class="form-control"/>
+                <span asp-validation-for="PolicyNo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="EndorsementNo"></label>
+                <input asp-for="EndorsementNo" class="form-control"/>
+                <span asp-validation-for="EndorsementNo" class="text-danger"></span>
+                </div>
+                 <div class="mb-3">
+                <label asp-for="RenewalNo"></label>
+                <input asp-for="RenewalNo" class="form-control"/>
+                <span asp-validation-for="RenewalNo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="DigitalApproval"></label>
+                 <fieldset class="form-group" id="DigitalApproval">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input asp-for="DigitalApproval" type="radio" class="form-check-input"  name="DigitalApproval" value="yes" checked/>
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input asp-for="DigitalApproval" type="radio" class="form-check-input"  name="DigitalApproval" value="no"/>
+                          No
+                        </label>
+                      </div>
+         
+                </fieldset>
+               </div>
+                 <div class="mb-3">
+                <label asp-for="IsMasked"></label>
+                 <fieldset class="form-group" id="isMasked">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input asp-for="IsMasked" type="radio" class="form-check-input" name="isMasked"  value="yes" checked/>
+                          True
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input asp-for="IsMasked" type="radio" class="form-check-input" name="isMasked"  value="no" />
+                          False
+                        </label>
+                      </div>
+                </fieldset>
+               </div>  
+               <button type="submit" class="btn btn-success" style="float:right"><i class="bi bi-file-earmark-pdf"></i> Print PDF</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<hr style="border: solid grey">
+
+<div class="pdfview">
+    @if (ViewBag.content != null)
+     {
+         <object id="pdf-result" style="width:100%; height:500px" type="application/pdf" data="data:application/pdf;base64,@ViewBag.content"></object>
+        
+     }
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/js/base64.js" asp-append-version="true"></script>
+    @{
+                <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+} 
